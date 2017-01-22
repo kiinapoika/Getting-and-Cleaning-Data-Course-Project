@@ -1,6 +1,6 @@
-# Getting-and-Cleaning-Data-Course-Project
+## Getting-and-Cleaning-Data-Course-Project
  
-##Following files are included in this repo:
+### Following files are included in this repo:
 1. a tidy data set as described below named tidyData.txt
 2. a code book that describes the variables, the data, and any transformations or work that is performed to clean up the data called CodeBook.md. 
 3. an R script called run_analysis.R that does the following:
