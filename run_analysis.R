@@ -5,7 +5,7 @@ library(plyr)
 
 #1. merge the training and the test sets to create one data set
 ##set working directory
-setwd("./~")
+setwd("./")
 
 ##create data folder
 if(!file.exists(paste0(getwd(),"/data"))){dir.create(paste0(getwd(),"/data"))}
@@ -74,6 +74,8 @@ mergedDataset <- merge(mergedDataset,activityType,by='activityId',all.x=TRUE);
 # Updating the colNames vector to include the new column names after merge
 colNames  <- colnames(mergedDataset); 
 
+####################################################################################################
+
 # 4. appropriately label the data set with descriptive activity names. 
 
 # Cleaning up the variable names
@@ -96,6 +98,8 @@ for (i in 1:length(colNames))
 # Reassigning the new descriptive column names to the mergedDataset set
 colnames(mergedDataset) <- colNames;
 
+####################################################################################################
+
 # 5. Create a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
 # Create a new table, mergedDatasetNoActivityType without the activityType column
@@ -109,5 +113,4 @@ tidyData    <- merge(tidyData,activityType,by='activityId',all.x=TRUE);
 
 # Export the tidyData set 
 write.table(tidyData, './tidyData.txt',row.names=TRUE,sep='\t');
-
 
